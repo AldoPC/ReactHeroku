@@ -86,7 +86,8 @@ usuarioSchema.methods.enviar_mail_bienvenida = function (cb) {
       from: "no-reply@easybici.com",
       to: email_destination,
       subject: "Verificación de cuenta en easybici.com",
-      html: `Hola,\n\nPor favor, para verificar su cuenta haga clic en el siguiente enlace: \n' ${process.env.MAIN_URI}' + '\/token/confirmation\/' + token.token + '\n`,
+      html: `Hola,
+      Por favor, para verificar su cuenta haga clic en el siguiente enlace:${process.env.MAIN_URI}/token/confirmation/${token.token}`,
     };
 
     mailer.sendMail(mailOptions, function (err) {
